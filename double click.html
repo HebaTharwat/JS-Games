@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day3 - Events</title>
+    <style>
+        div{
+            height: 150px;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        
+    </div>
+
+    <button id="redBtn" class="colorBtns">red</button>
+    <button id="greenBtn" class="colorBtns">green</button>
+    <button id="yellowBtn" class="colorBtns">yellow</button>
+
+    <script>
+        window.addEventListener('load',function(){
+            // var redBtn = document.getElementById('redBtn');
+            // var greenBtn = document.getElementById('greenBtn');
+            // var yellowBtn = document.getElementById('yellowBtn');
+            // var myDiv = document.getElementById('myDiv');
+            var myBtns = document.getElementsByClassName('colorBtns');
+            for(var i=0;i<myBtns.length;i++){
+                myBtns[i].addEventListener('dblclick',redBtnFn);
+            }
+
+            // for( element in myBtns){
+            //     console.log(element);
+            //     element.addEventListener('click',redBtnFn);
+            // }
+            
+            
+
+             function redBtnFn(event){
+                // console.log('red clicked');
+                myDiv.style.backgroundColor = this.innerText;
+                // myDiv.className = this.innerText;
+            }
+
+        });
+
+
+        /*
+offsetX:23
+offsetY:18
+pageX:33
+pageY:178
+
+button:0
+target
+
+        */
+    </script>
+</body>
+</html>

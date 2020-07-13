@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day3 - Events</title>
+    <style>
+        div{
+            height: 150px;
+            background-color: gray;
+        }
+
+        div#innerDiv{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        <div id="innerDiv"></div>
+    </div>
+
+    <p>clintX: <span id="clintX"></span></p>
+    <p>clintY: <span id="clintY"></span></p>
+    <p>offsetX: <span id="offsetX"></span></p>
+    <p>offsetY: <span id="offsetY"></span></p>
+    
+
+
+    <script>
+        window.addEventListener('load',function(){
+         var myDiv = document.getElementById('myDiv');
+         var clintXSpan = document.getElementById('clintX');
+         var clintYSpan = document.getElementById('clintY');
+         var offsetXSpan = document.getElementById('offsetX');
+         var offsetYSpan = document.getElementById('offsetY');
+         var innerDiv = document.getElementById('innerDiv');
+
+         myDiv.addEventListener('mouseenter',function(event){
+             this.style.backgroundColor = "red";
+         });
+
+          myDiv.addEventListener('mouseleave',function(event){
+             this.style.backgroundColor = "blue";
+         });
+
+         myDiv.addEventListener('mousemove',function(event){
+            //  console.log('mousemove');
+            //  console.log(event);
+             clintXSpan.innerText=event.clientX;
+             clintYSpan.innerText=event.clientY;
+            //  offsetX.innerText=event.offsetX;
+            //  offsetY.innerText=event.offsetY;
+         });
+
+         myDiv.addEventListener('mouseup',function(event){
+             console.log('mouseup');
+         });
+
+         myDiv.addEventListener('mousedown',function(event){
+             console.log('mousedown');
+         });
+
+          myDiv.addEventListener('click',function(event){
+             console.log('click');
+         });
+
+        });
+
+
+
+        
+    </script>
+</body>
+</html>

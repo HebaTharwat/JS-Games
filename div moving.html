@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events- day4</title>
+
+    <style>
+        #myDiv{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        #myDiv2{
+            width: 500px;
+            height: 50px;
+            background-color: black;
+            position: absolute;
+            left: 50px;
+            top: 800px;
+        }
+    </style>
+</head>
+<body>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <div id='myDiv'></div>
+
+    <div id='myDiv2'></div>
+    
+
+    <script>
+        (function(){
+            var startBtn = document.getElementById("startBtn");
+            var stopBtn = document.getElementById("stopBtn");
+            var myDiv = document.getElementById("myDiv");
+            var newleft = 50;
+            var step = 50;
+            var myInterval;
+
+            startBtn.addEventListener('click',function(event){
+                clearInterval(myInterval);
+                myInterval = setInterval(myStartFunc, 500);    
+            });
+
+             stopBtn.addEventListener('click',function(event){
+                clearInterval(myInterval);
+            });
+
+            function myStartFunc()
+            {
+                newleft +=step;
+                if(newleft >= document.body.clientWidth-myDiv.clientWidth|| newleft<=0){
+                    step = step * -1;
+                }
+                // if(newleft >= document.body.clientWidth-myDiv.clientWidth){
+                //     clearInterval(myInterval);
+                //     myInterval= setInterval(function(){
+                //         newleft-=step;
+                        
+                //         myDiv.style.left = newleft+"px";
+                //     },500);
+                    
+                // }
+                myDiv.style.left = newleft+"px";
+            }
+        }());
+    </script>
+</body>
+</html>

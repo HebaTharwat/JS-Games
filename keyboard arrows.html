@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day3- keyboard Events</title>
+    <style>
+        #myDiv{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+
+
+    </div>
+
+    <script>
+        window.addEventListener('load',function(){
+            var rightK = 39;
+            var leftK = 37;
+            var upK = 38;
+            var downK = 40;
+            var myDiv = document.getElementById('myDiv');
+            var top = 200;
+            var left =200;
+            var step=50;
+            // console.log("hiii");
+            document.addEventListener('keypress',function(event){
+                // console.log("press");
+                // console.log(event);
+            });
+
+            // document.addEventListener('keydown',function(event){
+            //     console.log("keydown");
+            //     console.log(event);
+            // });
+
+            document.addEventListener('keyup',function(event){
+                switch(event.keyCode){
+                    case rightK:
+                    console.log("right");
+                   // console.log(myDiv.style.left);
+                    left+=step;
+                    myDiv.style.left = left+"px";
+                    break;
+
+                    case leftK:
+                    console.log("left");
+                    left-=step;
+                    myDiv.style.left = left+"px";
+                    break;
+
+                    case upK:
+                    console.log("up");
+                    top -= step;
+                    myDiv.style.top= top+"px";
+                    break;
+
+                    case downK:
+                    console.log("down");
+                    top += step;
+                    myDiv.style.top= top+"px";
+                    break;
+                }
+            });
+
+
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      div.green{
+        background-color: green;
+      }
+      div.red{
+        background-color: red;
+      }
+      div.black{
+        background-color: black;
+      }
+      #div1{
+        width: 200px ; height: 150px
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <button id="bttn1" class ="green" >setGreen</button>
+    <button id="bttn2" class ="red" >setRed</button>
+    <button id="bttn3" class ="black" >setBlack</button>
+    <div id="div1" class="div"></div>
+
+     <script>
+
+     window.addEventListener('load',function () {
+       var greena = document.getElementById('bttn1');
+       var reda = document.getElementById('bttn2');
+       var blacka = document.getElementById('bttn3');
+        var diva = document.getElementById('div1');
+
+          bttn1.addEventListener('click', setcolor);
+          bttn2.addEventListener('click', setcolor);
+          bttn3.addEventListener('click', setcolor);
+
+          function setcolor(event) {
+            console.log('green');
+             diva.className= event.target.className ;
+            // diva.className="green";
+              // diva.className="black";
+          }
+        //  function setRed() {
+          //  console.log('red');  }
+          //function setBlack() {
+          //  console.log('black');   }
+   })
+
+
+     </script>
+  </body>
+</html>
